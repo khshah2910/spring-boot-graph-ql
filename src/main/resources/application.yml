@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: graphQL
+  graphql:
+    graphiql:
+      enabled: true
+  jpa:
+    database: postgresql
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        temp:
+          use_jdbc_metadata_defaults: false
+        default_schema: user_catalog
+    generate-ddl: on
+    hibernate:
+      ddl-auto: update
+    show-sql: off
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    tomcat:
+      test-while-idle: on
+      validation-query: SELECT 1
+    hikari:
+      maximum-pool-size: 5
+    url: jdbc:postgresql://localhost:5432/graph_ql
+    username:
+    password:
+  sql:
+    init:
+      platform: postgres
